@@ -2,9 +2,9 @@ version: 2
 
 sources:
   - name: staging
-    database: fhv_tripdata_partition_cluster
+    database: modular-rex-375712
     schema: dezoomcamp
 
     tables: 
-      - name: green_tripdata
+      - name: fhv_tripdata
       - name: yellow_tripdata
