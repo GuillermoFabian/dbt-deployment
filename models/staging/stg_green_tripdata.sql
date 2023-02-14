@@ -1,3 +1,10 @@
-{{ config(materialized='view') }}
+version: 2
 
-select * from dezoomcamp.fhv_trip_data
+sources:
+  - name: staging
+    database: fhv_tripdata_partition_cluster
+    schema: dezoomcamp
+
+    tables: 
+      - name: green_tripdata
+      - name: yellow_tripdata
