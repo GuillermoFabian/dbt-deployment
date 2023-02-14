@@ -1,10 +1,4 @@
-version: 2
+{{ config(materialized='view')}}
 
-sources:
-  - name: staging
-    database: fhv_tripdata_partition_cluster
-    schema: dezoomcamp
-
-    tables: 
-      - name: green_tripdata
-      - name: yellow_tripdata
+select * from {{ source('staging', 'trips_data_all.green_tripdata') }}
+limit 100
